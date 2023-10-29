@@ -6,10 +6,16 @@
     <body>
 
         <header>
-            <h1>Blubblubblub</h1>
+            <h1>Posts</h1>
         </header>
 
-        <p>Hi there!</p>
-        <p>It works!</p>
+    {% for post in html_posts %}
+        <article>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <time>published: {{ post.published_date }}</time>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
+    {% endfor %}
+
     </body>
 </html>
